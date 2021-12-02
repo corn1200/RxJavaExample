@@ -13,8 +13,8 @@ public class GetResult {
     @SerializedName("weather")
     public ArrayList<Weather> weather = new ArrayList<>();
 
-    @SerializedName("stations")
-    public String stations;
+    @SerializedName("base")
+    public String base;
 
     @SerializedName("main")
     public Main main;
@@ -51,17 +51,46 @@ public class GetResult {
     public String toString() {
         return "{\n" +
                 "   \"coord\": {\n" +
-                "       \"lon\": " + coord.lon + "\n" +
+                "       \"lon\": " + coord.lon + ",\n" +
                 "       \"lat\": " + coord.lat + "\n" +
                 "   },\n" +
                 "   \"weather\": [\n" +
                 "       {\n" +
-                "           \"id\": " + weather.get(0).id + "\n" +
-                "           \"main\": " + weather.get(0).main + "\n" +
-                "           \"description\": " + weather.get(0).description + "\n" +
+                "           \"id\": " + weather.get(0).id + ",\n" +
+                "           \"main\": " + weather.get(0).main + ",\n" +
+                "           \"description\": " + weather.get(0).description + ",\n" +
                 "           \"icon\": " + weather.get(0).icon + "\n" +
                 "       }\n" +
                 "   ],\n" +
+                "   \"base\": " + base + ",\n" +
+                "   \"main\": {\n" +
+                "       \"temp\": " + main.temp + ",\n" +
+                "       \"feels_like\": " + main.feelsLike + ",\n" +
+                "       \"temp_min\": " + main.tempMin + ",\n" +
+                "       \"temp_max\": " + main.tempMax + ",\n" +
+                "       \"pressure\": " + main.pressure + ",\n" +
+                "       \"humidity\": " + main.humidity + "\n" +
+                "   },\n" +
+                "   \"visibility\": " + visibility + ",\n" +
+                "   \"wind\": {\n" +
+                "       \"speed\": " + wind.speed + ",\n" +
+                "       \"deg\": " + wind.deg + "\n" +
+                "   },\n" +
+                "   \"clouds\": {\n" +
+                "       \"all\": " + clouds.all + "\n" +
+                "   },\n" +
+                "   \"dt\": " + dt + ",\n" +
+                "   \"sys\": {\n" +
+                "       \"type\": " + sys.type + ",\n" +
+                "       \"id\": " + sys.id + ",\n" +
+                "       \"country\": " + sys.country + ",\n" +
+                "       \"sunrise\": " + sys.sunrise + ",\n" +
+                "       \"sunset\": " + sys.sunset + "\n" +
+                "   },\n" +
+                "   \"timezone\": " + timezone + ",\n" +
+                "   \"id\": " + id + ",\n" +
+                "   \"name\": " + name + ",\n" +
+                "   \"cod\": " + cod + "\n" +
                 "}\n";
     }
 
