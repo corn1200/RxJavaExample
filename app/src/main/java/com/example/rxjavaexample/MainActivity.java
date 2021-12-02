@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         RetrofitService service = retrofit.create(RetrofitService.class);
 
         String cityName = "Seoul";
-        String apiKey = "1b9d3024cb88207299e87d357b8c7ee1";
+        String apiKey = "";
         String units = "metric";
         String language = "kr";
         Call<GetResult> call = service.getResult(cityName, apiKey, units, language);
