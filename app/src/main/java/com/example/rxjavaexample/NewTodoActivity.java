@@ -3,11 +3,13 @@ package com.example.rxjavaexample;
 import static com.example.rxjavaexample.MainActivity.EXTRA_DATA_UPDATE_ID;
 import static com.example.rxjavaexample.MainActivity.EXTRA_DATA_UPDATE_TODO;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,6 +22,8 @@ public class NewTodoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_todo);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mEditTodoView = findViewById(R.id.edit_todo);
 
