@@ -23,7 +23,7 @@ public class Todo {
         this.mTodo = todo;
     }
 
-    // id 와 할일 내용 값으로 객체 생성
+    // id 와 데이터 내용 값으로 객체 생성
     // 데이터 모델은 하나의 생성자만 가질 수 있기 때문에 Ignore 어노테이션 추가
     @Ignore
     public Todo(int id, @NonNull String todo) {

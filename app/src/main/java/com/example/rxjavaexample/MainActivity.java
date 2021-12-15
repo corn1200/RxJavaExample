@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 );
 
         // 플로팅 버튼 바인딩 후 클릭 이벤트 생성
-        // 현재 액티비티에서 할일 작성을 위한 액티비티로 이동 후 응답 받은 내용으로 작업
+        // 현재 액티비티에서 데이터 작성을 위한 액티비티로 이동 후 응답 받은 내용으로 작업
         fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(v -> {
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // 리사이클러 뷰 안에 있는 요소를 좌우로 스와이프 할 시 특정 작업 실행
-        // 스와이프 한 해당 요소의 포지션과 포지션 기반으로 어댑터 속 할일 데이터를 반환
-        // 뷰모델을 통해 해당 할일 요소를 삭제한다
+        // 스와이프 한 해당 요소의 포지션과 포지션 기반으로 어댑터 속 데이터 데이터를 반환
+        // 뷰모델을 통해 해당 데이터 요소를 삭제한다
         ItemTouchHelper helper = new ItemTouchHelper(
                 new ItemTouchHelper.SimpleCallback(0,
                         ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         // 스와이프 기능을 리사이클러 뷰에 할당
         helper.attachToRecyclerView(recyclerView);
 
-        // 요청 성공 후 회신 받은 데이터에서 할일 내용과 id를 값을 저장
+        // 요청 성공 후 회신 받은 인텐트 결과에서 데이터 내용과 id를 저장
         // 만약 id 값이 있을 경우 해당 id의 내용을 회신 받은 데이터로 전환
         ActivityResultLauncher<Intent> updateActivityResultLauncher =
                 registerForActivityResult(
@@ -131,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
 
         // 어댑터의 아이템에 대한 클릭 이벤트 정의
         // 리사이클러 뷰의 요소 클릭 시 클릭한 요소의 포지션 반환
-        // 현재 액티비티에서 할일 내용을 수정 할 수 있는 액티비티로 이동
-        // 포지션에 해당하는 요소의 id 와 할일 내용을 전달
+        // 현재 액티비티에서 데이터 내용을 수정 할 수 있는 액티비티로 이동
+        // 포지션에 해당하는 요소의 id 와 데이터 내용을 전달
         adapter.setOnItemClickListener((v, adapterPosition) -> {
             Todo todo = adapter.getTodoAtPosition(adapterPosition);
 
